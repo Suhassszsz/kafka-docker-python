@@ -37,12 +37,14 @@ docker exec -it broker kafka-topics --list --bootstrap-server broker:29092
 pip install -r requirements.txt
 
 📨 4. Run Producer
+
 python3 producer.py
 
 
 This will send 10 messages (Hello Kafka 0 … Hello Kafka 9) to the topic.
 
 📥 5. Run Consumer
+
 python3 consumer.py
 
 Behavior depends on auto_offset_reset:
@@ -63,3 +65,4 @@ docker exec -it broker kafka-console-consumer \
 Check Consumer Groups
 docker exec -it broker kafka-consumer-groups \
   --bootstrap-server broker:29092 --list
+
