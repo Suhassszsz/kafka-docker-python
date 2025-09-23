@@ -19,7 +19,9 @@ This project demonstrates how to run a Kafka cluster locally using Docker Compos
 
 
 🐳 1. Start Kafka Cluster
-docker-compose up -d
+
+
+###docker-compose up -d
 
 
 Verify containers are running:
@@ -83,6 +85,7 @@ docker exec -it broker kafka-console-consumer \
 Check Consumer Groups
 docker exec -it broker kafka-consumer-groups \
   --bootstrap-server broker:29092 --list
+
 
 
 
