@@ -4,11 +4,16 @@ This project demonstrates how to run a Kafka cluster locally using Docker Compos
 
 📂 Project Structure
 kafka-docker-python/
-│── docker-compose.yml   # Kafka + Zookeeper setup
-│── producer.py          # Python producer script
-│── consumer.py          # Python consumer script
-│── requirements.txt     # Python dependencies
-│── README.md            # Documentation
+
+│── docker-compose.yml  
+
+│── producer.py        
+
+│── consumer.py    
+
+│── requirements.txt  
+
+│── README.md            
 
 
 🐳 1. Start Kafka Cluster
@@ -65,4 +70,5 @@ docker exec -it broker kafka-console-consumer \
 Check Consumer Groups
 docker exec -it broker kafka-consumer-groups \
   --bootstrap-server broker:29092 --list
+
 
