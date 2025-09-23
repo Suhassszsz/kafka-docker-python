@@ -21,12 +21,12 @@ This project demonstrates how to run a Kafka cluster locally using Docker Compos
 🐳 1. Start Kafka Cluster
 
 
-###docker-compose up -d
+- docker-compose up -d
 
 
 Verify containers are running:
 
-docker ps
+- docker ps
 
 
 You should see zookeeper and broker.
@@ -35,7 +35,7 @@ You should see zookeeper and broker.
 
 
 📌 2. Create a Kafka Topic
-docker exec -it broker kafka-topics \
+- docker exec -it broker kafka-topics \
   --create --topic test-topic \
   --bootstrap-server broker:9092 \
   --partitions 1 --replication-factor 1
@@ -43,19 +43,19 @@ docker exec -it broker kafka-topics \
 
 List topics:
 
-docker exec -it broker kafka-topics --list --bootstrap-server broker:9092
+- docker exec -it broker kafka-topics --list --bootstrap-server broker:9092
 
 
 
 💻 3. Install Python Dependencies
 
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 
 
 📨 4. Run Producer
 
-python3 producer.py
+- python3 producer.py
 
 This will send 10 messages (Hello Kafka 0 … Hello Kafka 9) to the topic.
 
@@ -63,7 +63,7 @@ This will send 10 messages (Hello Kafka 0 … Hello Kafka 9) to the topic.
 
 📥 5. Run Consumer
 
-python3 consumer.py
+- python3 consumer.py
 
 Behavior depends on auto_offset_reset:
 
@@ -75,16 +75,17 @@ Behavior depends on auto_offset_reset:
 
 🔧 6. Kafka CLI Commands
 Produce from CLI
-docker exec -it broker kafka-console-producer \
+- docker exec -it broker kafka-console-producer \
   --topic test-topic --bootstrap-server broker:29092
 
 Consume from CLI
-docker exec -it broker kafka-console-consumer \
+- docker exec -it broker kafka-console-consumer \
   --topic test-topic --from-beginning --bootstrap-server broker:29092
 
 Check Consumer Groups
-docker exec -it broker kafka-consumer-groups \
+- docker exec -it broker kafka-consumer-groups \
   --bootstrap-server broker:29092 --list
+
 
 
 
