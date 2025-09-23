@@ -35,13 +35,13 @@ You should see zookeeper and broker.
 📌 2. Create a Kafka Topic
 docker exec -it broker kafka-topics \
   --create --topic test-topic \
-  --bootstrap-server broker:29092 \
+  --bootstrap-server broker:9092 \
   --partitions 1 --replication-factor 1
 
 
 List topics:
 
-docker exec -it broker kafka-topics --list --bootstrap-server broker:29092
+docker exec -it broker kafka-topics --list --bootstrap-server broker:9092
 
 
 
@@ -83,6 +83,7 @@ docker exec -it broker kafka-console-consumer \
 Check Consumer Groups
 docker exec -it broker kafka-consumer-groups \
   --bootstrap-server broker:29092 --list
+
 
 
 
