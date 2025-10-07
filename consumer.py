@@ -3,7 +3,7 @@ from kafka import KafkaConsumer
 consumer = KafkaConsumer(
     "test-topic",
     bootstrap_servers="localhost:9092",
-    auto_offset_reset="latest",  # 'earliest' reads old + new, 'latest' only new
+    auto_offset_reset="latest",  
     group_id="my-group"
 )
 
